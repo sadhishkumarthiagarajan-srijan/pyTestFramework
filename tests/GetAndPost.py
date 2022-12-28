@@ -1,4 +1,5 @@
 import requests 
+import json
 import Baseclass
 
 
@@ -18,9 +19,26 @@ def test_postop():
     rCode=res.status_code
     print(rCode)
     assert rCode==201 ,"response code error";
+    response=res.json();
+    print(response)
+    print(response["id"])
+
 
 def test_getOp():
     res=requests.get("https://reqres.in/api/users?page=2")
     rCode=res.status_code
     print(rCode)
     assert rCode==200 ,"response code error"
+    response=json.loads(res.text)
+    for k,v in response.items():
+       if(k=='data'):
+           dataToAssert=json.dumps(v)
+           jsonstr=json.loads(dataToAssert)
+           for d in jsonstr:
+               if(d['email']=='tobias.funke@reqres.in'):
+                        print(d['id'])
+                        assert d['id']==9 ,"id value mismatch"
+                   
+                        
+    
+    
