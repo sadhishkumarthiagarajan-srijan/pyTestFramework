@@ -1,6 +1,7 @@
 import requests 
 import json
 import utils.Baseclass as base
+import pytest
 
 
 class postOp():
@@ -23,7 +24,7 @@ def test_postop():
     print(response)
     print(response["id"])
 
-
+@pytest.mark.get   #marker
 def test_getOp():
     res=requests.get("https://reqres.in/api/users?page=2")
     rCode=res.status_code
