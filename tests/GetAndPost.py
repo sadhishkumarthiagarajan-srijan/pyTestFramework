@@ -1,6 +1,6 @@
 import requests 
 import json
-import Baseclass
+import utils.Baseclass as base
 
 
 class postOp():
@@ -9,7 +9,7 @@ class postOp():
 
 postCall=postOp()
 className=postCall.__class__
-payload=Baseclass.getTestData(className.__name__)
+payload=base.getTestData(className.__name__)
 
 # jsRes=res.json();
 # print(jsRes["data"][0]["email"])
