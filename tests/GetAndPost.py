@@ -4,6 +4,7 @@ import utils.Baseclass as base
 import pytest
 
 
+
 class postOp():
     def __init__(self) :
         pass
@@ -24,7 +25,7 @@ def test_postop():
     print(response)
     print(response["id"])
 
-@pytest.mark.get   #marker
+#@pytest.mark.get   #marker
 def test_getOp():
     res=requests.get("https://reqres.in/api/users?page=2")
     rCode=res.status_code
@@ -41,5 +42,5 @@ def test_getOp():
                         assert d['id']==9 ,"id value mismatch"
                    
                         
-    
+
     
