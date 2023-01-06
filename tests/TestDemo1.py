@@ -15,7 +15,7 @@ payload=base.getTestData(className.__name__)
 
 # jsRes=res.json();
 # print(jsRes["data"][0]["email"])
-
+@pytest.mark.smoke
 def test_postop():
     res=requests.post("https://reqres.in/api/users",payload) 
     rCode=res.status_code
@@ -25,7 +25,7 @@ def test_postop():
     print(response)
     print(response["id"])
 
-#@pytest.mark.get   #marker
+@pytest.mark.smoke  #marker
 def test_getOp():
     res=requests.get("https://reqres.in/api/users?page=2")
     rCode=res.status_code
@@ -41,6 +41,6 @@ def test_getOp():
                         print(d['id'])
                         assert d['id']==9 ,"id value mismatch"
                    
-                        
 
-    
+
+   
