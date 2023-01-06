@@ -20,7 +20,7 @@ allure generate
 
 
 Command to run test scripts and as well as to generate allure 
-pytest GetAndPost.py  --alluredir=allure-report/
+"pytest GetAndPost.py  --alluredir=allure-report/"
 
 To serve allure report
-allure serve allure-report/
+"allure serve allure-report/"
