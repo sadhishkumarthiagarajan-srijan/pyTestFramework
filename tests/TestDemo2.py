@@ -33,7 +33,7 @@ def test_PostCall():
     res=requests.post("https://fakerestapi.azurewebsites.net/api/v1/Activities",json.loads(payload))
     rCode=res.status_code
     print(rCode)
-    print(res.text)
+    print(res.text)#added now
     
     
 @pytest.mark.sanity
