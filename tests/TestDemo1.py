@@ -23,7 +23,7 @@ def test_postop():
     assert rCode==201 ,"response code error";
     response=res.json();
     print(response)
-    print(response["id"])
+    print(response["id"]) #added
 
 @pytest.mark.smoke  #marker
 def test_getOp():
