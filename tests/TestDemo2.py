@@ -22,8 +22,11 @@ def test_getCall():
     for d in dataJson:
         if(d['id']==30):
             assert d['title']=="Activity 30"
-            print(d['title'])
+            print(d['title'])  #prints title
 
+
+    
+    
 @pytest.mark.smoke
 def test_PostCall():
     payload=base.getTestData("test_PostCall")
@@ -33,3 +36,8 @@ def test_PostCall():
     print(res.text)
     
     
+@pytest.mark.sanity
+def test_PutCall():
+    res=requests.put("https://fakerestapi.azurewebsites.net/api/v1/Activities/21")
+    rCode=res.status_code
+    print(rCode)

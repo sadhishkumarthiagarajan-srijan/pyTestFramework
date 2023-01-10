@@ -25,7 +25,7 @@ def test_postop():
     print(response)
     print(response["id"])
 
-@pytest.mark.smoke  #marker
+@pytest.mark.sanity  #marker
 def test_getOp():
     res=requests.get("https://reqres.in/api/users?page=2")
     rCode=res.status_code
